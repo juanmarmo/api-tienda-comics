@@ -214,12 +214,20 @@ api-tienda-comics/
 
 ### Paso 2.3: Variables de entorno (la conexión a Atlas)
 
-Crea el archivo `.env` en la raíz del proyecto con la cadena de conexión del Paso 1.4:
+Copia la plantilla y edita `.env` en la raíz del proyecto con la cadena de conexión real de Atlas del Paso 1.4:
 
 ```env
 PORT=3000
-MONGODB_URI=mongodb+srv://USUARIO:CONTRASEÑA@cluster0.xxxxx.mongodb.net/tienda_comics
+MONGODB_URI=mongodb+srv://USUARIO:CONTRASEÑA@HOST-REAL-DE-ATLAS/tienda_comics
 ```
+
+En Codespaces puedes crear el archivo así:
+
+```bash
+cp env.example .env
+```
+
+`env.example` es solo una plantilla; `dotenv` carga `.env`. Reemplaza `USUARIO`, `CONTRASEÑA` y el host por los valores de **Atlas → Connect → Drivers**. No incluyas los signos `< >` en la URI. Si la contraseña contiene caracteres como `@`, `:` o `/`, codifícala para URL o usa una contraseña sin esos caracteres.
 
 **Concepto:** las **variables de entorno** guardan configuración sensible (contraseñas, URLs) fuera del código fuente. **Nunca subas el `.env` a GitHub**: ya quedó protegido por el `.gitignore`.
 

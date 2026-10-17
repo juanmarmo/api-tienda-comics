@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import Autor from "../models/Autor.js";
+import Comic from "../models/Comic.js";
 
 // POST /api/comics  → crear un cómic
 export async function crearComic(req, res) {
